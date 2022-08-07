@@ -7,7 +7,7 @@ os.system('nohup node --max-old-space-size=460 fetchworld.js > js.out & ')
 print("**script**: fetching world...")
 time.sleep(2)
 
-while open('js.out', 'r').read().find('fetched world folder'):
+while open('js.out', 'r').read().find('fetched world folder') <= -1:
     time.sleep(10)
 
 
@@ -18,7 +18,7 @@ time.sleep(5)
 print("**script**: starting server")
 os.system('nohup java -Xmx460M -jar server.jar > nohup.out &')
 
-while open('nohup.out', 'r').read().find('Done'):
+while open('nohup.out', 'r').read().find('Done') <= -1:
     time.sleep(10)
         
 print("**script**: server has started!")
