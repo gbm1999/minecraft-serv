@@ -31,7 +31,7 @@ while True:
     print("**script**: saving world...")
     os.system('zip -FSr world.zip world')
     time.sleep(10)
-    os.system('node --max-old-space-size=260 savetodb.js')
+    os.system('node --max-old-space-size=100 savetodb.js')
     print("**script**: world saved!")
     time.sleep(10)
 
