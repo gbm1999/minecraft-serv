@@ -12,8 +12,6 @@ while open('js.out', 'r').read().find('fetched world folder') <= -1:
 
 
 print("**script**: world fetched!")
-time.sleep(1)
-os.system('unzip -o world.zip')
 time.sleep(5)
 print("**script**: starting server")
 os.system('nohup java -Xmx600m -jar server.jar > nohup.out &')
