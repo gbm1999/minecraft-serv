@@ -1,5 +1,4 @@
 const fs = require('fs');
-const crypto = require('crypto')
 
 const connectionString = process.env.DATABASE_URL;
 
@@ -10,16 +9,8 @@ const client = new Client({
   ssl: { rejectUnauthorized: false }
 });
 
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-  }
 
 var storage;
-var myData;
 
 try {
 	storage = fs.readFileSync('./world.zip', { encoding: 'hex' });

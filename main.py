@@ -16,7 +16,7 @@ time.sleep(1)
 os.system('unzip -o world.zip')
 time.sleep(5)
 print("**script**: starting server")
-os.system('nohup java -Xmx700m -jar server.jar > nohup.out &')
+os.system('nohup java -Xmx600m -jar server.jar > nohup.out &')
 
 while open('nohup.out', 'r').read().find('Done') <= -1:
     time.sleep(10)
@@ -31,7 +31,7 @@ while True:
     print("**script**: saving world...")
     os.system('zip -FSr world.zip world')
     time.sleep(10)
-    os.system('node --max-old-space-size=50 savetodb.js')
+    os.system('node --max-old-space-size=100 savetodb.js')
     print("**script**: world saved!")
     time.sleep(10)
 
