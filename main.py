@@ -3,7 +3,7 @@ import os, time, subprocess, signal
 os.system('heroku-php-apache2 &')
 print("**script**: starting web")
 time.sleep(10)
-os.system('nohup node --max-old-space-size=600 fetchworld.js > js.out & ')
+os.system('nohup node --max-old-space-size=460 fetchworld.js > js.out & ')
 print("**script**: fetching world...")
 time.sleep(2)
 
@@ -16,7 +16,7 @@ time.sleep(1)
 os.system('unzip -o world.zip')
 time.sleep(5)
 print("**script**: starting server")
-os.system('nohup java -Xmx600m -jar server.jar > nohup.out &')
+os.system('nohup java -Xmx700m -jar server.jar > nohup.out &')
 
 while open('nohup.out', 'r').read().find('Done') <= -1:
     time.sleep(10)
