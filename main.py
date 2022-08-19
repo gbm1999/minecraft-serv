@@ -16,7 +16,7 @@ time.sleep(1)
 os.system('unzip -o world.zip')
 time.sleep(5)
 print("**script**: starting server")
-os.system('nohup java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseG1GC -verbose:gc -Xmx530m -Djline.terminal=jline.UnsupportedTerminal -Xms530m -jar server.jar > nohup.out &')
+os.system('nohup java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseG1GC -verbose:gc -Xmx430m -Djline.terminal=jline.UnsupportedTerminal -Xms430m -jar server.jar > nohup.out &')
 
 while open('nohup.out', 'r').read().find('Done') <= -1:
     time.sleep(10)
