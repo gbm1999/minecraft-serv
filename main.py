@@ -3,7 +3,7 @@ import os, time, subprocess, signal
 os.system('heroku-php-apache2 &')
 print("**script**: starting web")
 time.sleep(10)
-os.system('node --max-old-space-size=460 fetchworld.js > js.out & ')
+os.system('node --max-old-space-size=480 fetchworld.js > js.out & ')
 print("**script**: fetching world...")
 time.sleep(2)
 
